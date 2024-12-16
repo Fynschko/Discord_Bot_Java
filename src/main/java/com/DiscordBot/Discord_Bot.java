@@ -24,12 +24,11 @@ public class Discord_Bot {
         String dbUser = config.get("DATABASEUSERNAME");
 
         JDABuilder builder =  JDABuilder.createDefault(token).enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES, GatewayIntent.MESSAGE_CONTENT);
-        builder.setActivity(Activity.playing("Hobo-Simulater"));
+        builder.setActivity(Activity.playing("Die Gurken am schälen"));
         builder.setStatus(OnlineStatus.ONLINE);
         JDA bot = builder.build();
 
         bot.addEventListener(new EventListeners());
-
         MySql.connect(dbUser, dbPass);
 
     }
